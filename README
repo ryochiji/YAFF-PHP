@@ -1,11 +1,18 @@
 YAFF-PHP README
 ===============
 
-YAFF-PHP is yet another f'n framework for PHP.  Actually, it's more of a MVC-inspired proto-framework, rather than a full-blown framework.  The goal of YAFF is to introduce just enough structure to encourage good coding practices, without sacrificing PHP's inherent flexibility and ease of use.  It's not as complete as alternatives like Cake, Django or Rails, but it's also easier to start using, and less dictatorial.  YAFF is designed for rapid prototyping and development, but makes trade-offs that may sacrifice some performance, and therefore may not be suitable for high-traffic production sites (but then, if you're at the stage of choosing a framework and you already think your project will become a high-traffic site, you're probably wrong).
+YAFF-PHP is yet another f'n framework for PHP.  Actually, it's more of a MVC-inspired proto-framework, rather than a full-blown framework.  The goal of YAFF is to introduce just enough structure to encourage good coding practices, without sacrificing PHP's inherent flexibility and ease of use.  It's not as complete as alternatives like Cake, Django or Rails, but it's also easier to start using, and less dictatorial.  YAFF is designed for rapid prototyping and development, but makes trade-offs that may sacrifice some performance, and therefore may not be suitable for production sites that require super high throughput (but then, if you're at the stage of choosing a framework and you already think your project will become a high-traffic site, you're probably wrong).
 
 YAFF Offers:
 - Easy to use URL mapping out of the box
 - Clean code-layout
 - Templating
 - Flexibility and ease of use
-- 
+- Support for arbitrary output Content-Types
+- Support for multiple environments with different configuration files (development, staging, testing, production, etc)
+- Flexibility to integrate with any backend datastore, or front-end JS library
+
+YAFF Does NOT Offer:
+- An "official" Model or ORM
+- A guarantee that your project will be successful
+
