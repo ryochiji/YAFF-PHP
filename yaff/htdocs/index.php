@@ -7,8 +7,10 @@ require('./ryobase/utils.inc.php');
 require('./ryobase/Context.class.php');
 require('./ryobase/Component.class.php');
 require('./ryobase/Alerts.class.php');
-$env = getenv('AFF_ENV');
-if (!empty($env)){
+$env = getenv('YAFF_ENV');
+if ($config=getenv('YAFF_CONFIG')){
+    @include($config);
+}else if (!empty($env)){
     @include('./includes/configs_'.$env.'.inc.php');
 }else{
     @include('./includes/configs.inc.php');
