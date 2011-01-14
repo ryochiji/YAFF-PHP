@@ -151,6 +151,29 @@ class Context {
         echo $this->content['main'];
     }
 
+    
+    /**
+     * Return path to components directory
+     */
+    private function getCompDir(){
+        static $dir;
+
+        if (!isset($dir)){
+            if (defined('YAFF_COMPONENTS_DIR')){
+                $dir = YAFF_COMPONENTS_DIR;
+            }else if (getenv('YAFF_COMPONENTS_DIR')){
+                $dir = getenv('YAFF_COMPONENTS_DIR');
+            }else{
+                $dir = './components/';
+            }
+        }
+
+        if ($dir[strlen($dir)-1]!='/') $dir.='/';
+
+        return $dir;
+        
+    }
+
 
     /**
      * Load and execute a component/method
@@ -162,8 +185,8 @@ class Context {
         if (!$comp) $comp = $this->getComponent();
         if (!$method) $method = $this->getComponentMethod();
 
-        $compFile = './components/'.$comp.'.component.php';
-        if (!include($compFile)){
+        $compFile = $this->getCompDir().$comp.'.component.php';
+        if (!@include($compFile)){
             throw new ContextException("Component '$comp' not found", 404);
         }
 
