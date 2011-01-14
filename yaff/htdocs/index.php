@@ -33,7 +33,7 @@ if ($ctx->isFile()){
             $ctx->setHTTPStatus(404, "Not found");
             $ctx->setContent($ce->getMessage());
         }else{
-            $ctx->setHTTPStatus(500, "Internal error in PHP softwawre");
+            $ctx->setHTTPStatus(500, "Internal error in PHP software");
             $ctx->setContent($ce->getMessage());
             
         }
